@@ -1,7 +1,10 @@
+require 'ancestry'
+
 module Geotree
   class Location < ActiveRecord::Base
     has_ancestry
-    attr_accessible :geometry, :lat, :lng, :long_name, :short_name, :type
+    has_many :placements
+    attr_accessible :geometry, :lat, :lng, :long_name, :short_name, :type if defined?(ActiveModel::MassAssignmentSecurity)
     serialize :geometry, Hash
 
     validates_uniqueness_of :long_name, scope: [:type, :ancestry]

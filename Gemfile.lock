@@ -2,7 +2,9 @@ PATH
   remote: .
   specs:
     geotree (0.0.1)
-      rails (~> 3.2.16)
+      ancestry
+      geocoder
+      rails (>= 3.2.15)
 
 GEM
   remote: https://rubygems.org/
